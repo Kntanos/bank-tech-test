@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 class Transactions
+  DEFAULT_BALANCE = 0
+
   @@list = []
-  @@balance = 0
+  @@balance = DEFAULT_BALANCE
 
   def self.deposit(date, amount)
     @@list.push({ date: date, amount: amount, new_balance: @@balance + amount })

@@ -4,36 +4,30 @@ require './lib/bank_account'
 
 RSpec.describe BankAccount do
   describe '#make_deposit' do
+    let(:return_value) { "a new deposit" }
     it 'adds a transaction to the list of transactions' do
-      transactions = class_double('Transactions')
-      allow(transactions).to receive(:deposit) do |date, amount|
-        [{ date: date, amount: amount }]
-      end
+      class_double('Transactions', :deposit => return_value).as_stubbed_const
 
-      expect(transactions.deposit('10/01/2023', 1000)).to eq([{ date: '10/01/2023', amount: 1000 }])
+      expect(Transactions.deposit('10/01/2023', 1000)).to eq("a new deposit")
     end
   end
 
   describe '#make_withdrawals' do
+    let(:return_value) { "a new withdrawal" }
     it 'adds a transaction to the list of transactions' do
-      transactions = class_double('Transactions')
-      allow(transactions).to receive(:withdrawal) do |date, amount|
-        [{ date: date, amount: -amount.abs }] # this return balance in irb
-      end
+      class_double('Transactions', :withdrawal => return_value).as_stubbed_const
 
-      expect(transactions.withdrawal('10/01/2023', 1000)).to eq([{ date: '10/01/2023', amount: -1000 }])
+      expect(Transactions.withdrawal('11/01/2023', 5000)).to eq("a new withdrawal")
     end
   end
 
   describe '#request_statement' do
-    let(:list) { [{ date: '10/01/2023', amount: 1000 }] }
+    let(:list) { "a list of transactions" }
+    let(:return_value) { "a new statement" }
     it 'requests the statement of transactions' do
-      statement = class_double('Statement')
-      allow(statement).to receive(:print) do |_list|
-        "date || credit || debit || balancen\n10/01/2023 || || 1000 || 1000"
-      end
+      class_double('Statement', :print => return_value).as_stubbed_const
 
-      expect(statement.print(list)).to eq("date || credit || debit || balancen\n10/01/2023 || || 1000 || 1000")
+      expect(Statement.print(list)).to eq( "a new statement")
     end
   end
 end
