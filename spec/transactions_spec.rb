@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require './lib/transactions'
 
 RSpec.describe Transactions do
-
   after(:each) do
     Transactions.list.clear
   end

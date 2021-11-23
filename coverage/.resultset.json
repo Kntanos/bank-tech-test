@@ -3,10 +3,11 @@
     "coverage": {
       "C:/Users/kosta/OneDrive/Makers/bank-tech-test/spec/bank_account_spec.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           null,
+          1,
           1,
           1,
           1,
@@ -45,11 +46,12 @@
       },
       "C:/Users/kosta/OneDrive/Makers/bank-tech-test/lib/bank_account.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
           1,
-          null,
           1,
           null,
           1,
@@ -73,14 +75,18 @@
       },
       "C:/Users/kosta/OneDrive/Makers/bank-tech-test/lib/transactions.rb": {
         "lines": [
-          1,
           null,
-          1,
           null,
           1,
           1,
+          1,
+          null,
+          1,
+          1,
+          1,
           null,
           null,
+          1,
           1,
           1,
           null,
@@ -93,19 +99,49 @@
       },
       "C:/Users/kosta/OneDrive/Makers/bank-tech-test/lib/statement.rb": {
         "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          2,
           1,
           null,
           1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "C:/Users/kosta/OneDrive/Makers/bank-tech-test/spec/statement_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
           null,
           null
         ]
       },
       "C:/Users/kosta/OneDrive/Makers/bank-tech-test/spec/transactions_spec.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           null,
+          1,
           1,
           2,
           null,
@@ -129,6 +165,6 @@
         ]
       }
     },
-    "timestamp": 1637694808
+    "timestamp": 1637698061
   }
 }

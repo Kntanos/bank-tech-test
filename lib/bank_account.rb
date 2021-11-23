@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 require_relative 'transactions'
 require_relative 'statement'
 
 class BankAccount
-
-  attr_reader :transactions, :statment
+  attr_reader :transactions, :statement
 
   def initialize(transactions = Transactions, statement = Statement)
     @transactions = transactions
