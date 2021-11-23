@@ -9,8 +9,9 @@ RSpec.describe Statement do
        { date: '11/01/2023', amount: -500, new_balance: 500 }]
     end
     it 'generates the statement report' do
-      expect(Statement.print(transactions)).to output([{ date: '10/01/2023', amount: 1000, new_balance: 1000 },
-                                           { date: '11/01/2023', amount: -500, new_balance: 500 }])
+      expect do
+        Statement.print(transactions)
+      end.to output("date || credit || debit || balance\n11/01/2023 || || 500 || 500\n10/01/2023 || 1000 || || 1000\n").to_stdout
     end
   end
 end
