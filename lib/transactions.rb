@@ -7,6 +7,7 @@ class Transactions
   end
 
   def self.withdrawal(date, amount)
+    @@list.push({:date => date, :amount => -(amount).abs})
   end
 
   def self.list
