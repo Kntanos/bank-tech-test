@@ -2,10 +2,6 @@ require './lib/bank_account'
 
 RSpec.describe BankAccount do
   
-  before(:all) do
-    @account = BankAccount.new
-  end
-
   describe '#make_deposit' do
     it 'adds a transaction to the list of transactions' do
       transactions = class_double("Transactions")
