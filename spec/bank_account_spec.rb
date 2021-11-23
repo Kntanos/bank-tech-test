@@ -16,4 +16,15 @@ RSpec.describe BankAccount do
       expect(transactions.deposit('10/01/2023', 1000)).to eq([{:date => '10/01/2023', :amount => 1000}])
     end
   end
+
+  describe '#make_withdrawals' do
+    it 'adds a transaction to the list of transactions' do
+      transactions = class_double("Transactions")
+      allow(transactions).to receive(:withdrawal) do |date, amount|
+        [{:date => date, :amount => -(amount).abs}]
+      end
+
+      expect(transactions.withdrawal('10/01/2023', 1000)).to eq([{:date => '10/01/2023', :amount => -1000}])
+    end
+  end
 end

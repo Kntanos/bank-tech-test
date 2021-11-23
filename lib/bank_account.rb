@@ -11,4 +11,9 @@ class BankAccount
   def make_deposit(date, amount)
     transactions.deposit(date, amount)
   end
+
+  def make_withdrawal(date, amount)
+    transactions.withdrawal(date, amount)
+  end
+
 end
