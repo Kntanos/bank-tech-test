@@ -1,5 +1,7 @@
 class Transactions
 
+  @@list = []
+
   def self.deposit(date, amount)
   end
 

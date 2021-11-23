@@ -1,11 +1,13 @@
 require_relative 'transactions'
+require_relative 'statement'
 
 class BankAccount
 
-  attr_reader :transactions
+  attr_reader :transactions, :statment
 
-  def initialize(transactions = Transactions)
+  def initialize(transactions = Transactions, statement = Statement)
     @transactions = transactions
+    @statement = statement
   end
 
   def make_deposit(date, amount)
@@ -16,4 +18,7 @@ class BankAccount
     transactions.withdrawal(date, amount)
   end
 
+  def request_statement
+    statement.print(transactions.list)
+  end
 end

@@ -27,4 +27,16 @@ RSpec.describe BankAccount do
       expect(transactions.withdrawal('10/01/2023', 1000)).to eq([{:date => '10/01/2023', :amount => -1000}])
     end
   end
+
+  describe '#request_statement' do
+    let(:list) {[{:date => '10/01/2023', :amount => 1000}]}
+    it 'requests the statement of transactions' do
+      statement = class_double("Statement")
+      allow(statement).to receive(:print) do |list|
+        "date || credit || debit || balancen\n10/01/2023 || || 1000 || 1000"
+      end
+      
+      expect(statement.print(list)).to eq("date || credit || debit || balancen\n10/01/2023 || || 1000 || 1000")
+    end
+  end
 end
