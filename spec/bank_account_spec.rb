@@ -3,6 +3,15 @@
 require './lib/bank_account'
 
 RSpec.describe BankAccount do
+  describe '#initialize' do
+    let(:account) { BankAccount.new }
+    it 'initializes the class with 2 arguments' do
+      
+    expect(account.transactions).to eq(Transactions)
+    expect(account.statement).to eq(Statement)
+    end
+  end
+
   describe '#make_deposit' do
     let(:return_value) { "a new deposit" }
     it 'adds a transaction to the list of transactions' do
