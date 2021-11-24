@@ -24,6 +24,12 @@ date || credit || debit || balance
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
 ```
+#### Approach
+I chose to split the code into 3 classes to keep responsibilities for instantiating an account, transactions and statement, separately.
+Given that the only class that is required to instantiate an objevt is BankAccount, the Transactions and Statement classes do not intantiate objects and I used class methods instead
+This gives more flexibility to change the classes that handle these responsibilities, as long as they respond to the relevant methods.
+
+The input of the date of transaction is as a string. The amount for withdrawals can be given with or without a negative sign.
 
 ##### Built with: Ruby
 ##### Tested with: Rsepc
